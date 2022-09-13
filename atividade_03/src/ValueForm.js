@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { useState } from "react";
+import React, { Fragment, useState } from 'react';
 
-const AddCounter = () => {
+const ValueForm = () => {
+  
   const [counter, setCounter] = useState(0);
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState();
 
   const handleSubmit = () => {
     setCounter(counter + number);
@@ -22,7 +22,6 @@ const AddCounter = () => {
 
   const resetInput = () => setNumber("");
 
-
   return (
     <Fragment>
       <center>
@@ -35,7 +34,8 @@ const AddCounter = () => {
               <input type="number" value={number}
                 class="form-control text-input"
                 maxlength="1"
-                onChange={(e) => setNumber(Number(e.target.value))} />
+                onChange={(e) => setNumber(Number(e.target.value))}
+              />
             </td>
           </tr>
         </table>
@@ -65,4 +65,4 @@ const AddCounter = () => {
   );
 }
 
-export default AddCounter;
+export default ValueForm;
